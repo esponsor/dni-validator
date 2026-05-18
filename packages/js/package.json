@@ -1,6 +1,6 @@
 {
   "name": "@esponsor/dni-validator",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Validators for Latin American and related national ID documents",
   "repository": {
     "type": "git",
