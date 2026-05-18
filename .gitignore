@@ -1,0 +1,7 @@
+/vendor
+/packages/php/vendor
+/packages/js/node_modules
+/packages/js/dist
+/node_modules
+composer.lock
+/packages/php/composer.lock

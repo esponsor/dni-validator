@@ -1,0 +1,25 @@
+{
+    "name": "esponsor/dni-validator",
+    "description": "Validators for Latin American and related national ID documents with Laravel validation rules",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["dni", "validator", "laravel", "rut", "curp", "cpf", "latam"],
+    "authors": [{ "name": "vpuentem", "email": "victorpuentem@gmail.com" }],
+    "require": {
+        "php": "^8.2",
+        "illuminate/contracts": "^10|^11|^12"
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.34"
+    },
+    "autoload": {
+        "psr-4": { "Esponsor\\DniValidator\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Esponsor\\DniValidator\\Tests\\": "tests/" }
+    },
+    "config": {
+        "allow-plugins": { "pestphp/pest-plugin": true }
+    },
+    "minimum-stability": "stable"
+}
