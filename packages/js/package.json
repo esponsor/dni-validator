@@ -2,6 +2,13 @@
   "name": "@esponsor/dni-validator",
   "version": "1.0.0",
   "description": "Validators for Latin American and related national ID documents",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/esponsor/dni-validator.git",
+    "directory": "packages/js"
+  },
+  "homepage": "https://github.com/esponsor/dni-validator#readme",
+  "bugs": "https://github.com/esponsor/dni-validator/issues",
   "type": "module",
   "license": "MIT",
   "main": "./dist/index.js",
