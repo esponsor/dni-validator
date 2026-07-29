@@ -18,13 +18,49 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
+    "./argentina": {
+      "types": "./dist/argentina/index.d.ts",
+      "import": "./dist/argentina/index.js"
+    },
+    "./brazil": {
+      "types": "./dist/brazil/index.d.ts",
+      "import": "./dist/brazil/index.js"
+    },
+    "./canada": {
+      "types": "./dist/canada/index.d.ts",
+      "import": "./dist/canada/index.js"
+    },
     "./chile": {
-      "types": "./dist/chile/rut.d.ts",
-      "import": "./dist/chile/rut.js"
+      "types": "./dist/chile/index.d.ts",
+      "import": "./dist/chile/index.js"
+    },
+    "./colombia": {
+      "types": "./dist/colombia/index.d.ts",
+      "import": "./dist/colombia/index.js"
+    },
+    "./ecuador": {
+      "types": "./dist/ecuador/index.d.ts",
+      "import": "./dist/ecuador/index.js"
     },
     "./mexico": {
-      "types": "./dist/mexico/curp.d.ts",
-      "import": "./dist/mexico/curp.js"
+      "types": "./dist/mexico/index.d.ts",
+      "import": "./dist/mexico/index.js"
+    },
+    "./peru": {
+      "types": "./dist/peru/index.d.ts",
+      "import": "./dist/peru/index.js"
+    },
+    "./spain": {
+      "types": "./dist/spain/index.d.ts",
+      "import": "./dist/spain/index.js"
+    },
+    "./united-states": {
+      "types": "./dist/united-states/index.d.ts",
+      "import": "./dist/united-states/index.js"
+    },
+    "./uruguay": {
+      "types": "./dist/uruguay/index.d.ts",
+      "import": "./dist/uruguay/index.js"
     }
   },
   "files": ["dist"],
