@@ -6,7 +6,7 @@
     "keywords": ["dni", "validator", "laravel", "rut", "curp", "cpf", "latam"],
     "authors": [{ "name": "eSponsor", "email": "info@esponsor.com" }],
     "require": {
-        "php": "^8.2",
+        "php": "^8.4",
         "illuminate/contracts": "^10|^11|^12"
     },
     "require-dev": {

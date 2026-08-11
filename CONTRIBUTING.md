@@ -23,7 +23,7 @@ npm test        # or: npm --prefix packages/js test
 npm run build
 ```
 
-Requires PHP `^8.2`, Composer 2, and Node 20+.
+Requires PHP `^8.4`, Composer 2, and Node 20+.
 
 ## Adding a document
 

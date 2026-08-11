@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "48ff90ae1e0a06ff86dab6f3c9668db1",
+    "content-hash": "cbbc97333c558ae71a3b3abc4f2b2c1b",
     "packages": [
         {
             "name": "illuminate/contracts",
@@ -4065,7 +4065,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.2"
+        "php": "^8.4"
     },
     "platform-dev": {},
     "plugin-api-version": "2.9.0"
