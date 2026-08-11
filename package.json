@@ -1,0 +1,77 @@
+{
+  "name": "@esponsor/dni-validator",
+  "version": "0.1.0",
+  "description": "Validators for Latin American and related national ID documents",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/esponsor/dni-validator.git",
+    "directory": "packages/js"
+  },
+  "homepage": "https://github.com/esponsor/dni-validator#readme",
+  "bugs": "https://github.com/esponsor/dni-validator/issues",
+  "type": "module",
+  "license": "MIT",
+  "main": "./packages/js/dist/index.js",
+  "types": "./packages/js/dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./packages/js/dist/index.d.ts",
+      "import": "./packages/js/dist/index.js"
+    },
+    "./argentina": {
+      "types": "./packages/js/dist/argentina/index.d.ts",
+      "import": "./packages/js/dist/argentina/index.js"
+    },
+    "./brazil": {
+      "types": "./packages/js/dist/brazil/index.d.ts",
+      "import": "./packages/js/dist/brazil/index.js"
+    },
+    "./canada": {
+      "types": "./packages/js/dist/canada/index.d.ts",
+      "import": "./packages/js/dist/canada/index.js"
+    },
+    "./chile": {
+      "types": "./packages/js/dist/chile/index.d.ts",
+      "import": "./packages/js/dist/chile/index.js"
+    },
+    "./colombia": {
+      "types": "./packages/js/dist/colombia/index.d.ts",
+      "import": "./packages/js/dist/colombia/index.js"
+    },
+    "./ecuador": {
+      "types": "./packages/js/dist/ecuador/index.d.ts",
+      "import": "./packages/js/dist/ecuador/index.js"
+    },
+    "./mexico": {
+      "types": "./packages/js/dist/mexico/index.d.ts",
+      "import": "./packages/js/dist/mexico/index.js"
+    },
+    "./peru": {
+      "types": "./packages/js/dist/peru/index.d.ts",
+      "import": "./packages/js/dist/peru/index.js"
+    },
+    "./spain": {
+      "types": "./packages/js/dist/spain/index.d.ts",
+      "import": "./packages/js/dist/spain/index.js"
+    },
+    "./united-states": {
+      "types": "./packages/js/dist/united-states/index.d.ts",
+      "import": "./packages/js/dist/united-states/index.js"
+    },
+    "./uruguay": {
+      "types": "./packages/js/dist/uruguay/index.d.ts",
+      "import": "./packages/js/dist/uruguay/index.js"
+    }
+  },
+  "files": [
+    "packages/js/dist",
+    "packages/js/src",
+    "packages/js/tsconfig.json",
+    "packages/js/package.json"
+  ],
+  "scripts": {
+    "prepare": "npm --prefix packages/js install --include=dev && npm --prefix packages/js run build",
+    "test": "npm --prefix packages/js test",
+    "build": "npm --prefix packages/js run build"
+  }
+}

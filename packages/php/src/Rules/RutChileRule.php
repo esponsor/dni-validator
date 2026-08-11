@@ -2,21 +2,17 @@
 
 namespace Esponsor\DniValidator\Rules;
 
-use Closure;
 use Esponsor\DniValidator\RutChile;
-use Illuminate\Contracts\Validation\ValidationRule;
 
-class RutChileRule implements ValidationRule
+class RutChileRule extends DocumentRule
 {
-    public function __construct(private ?RutChile $validator = null)
+    public function __construct(?RutChile $validator = null)
     {
-        $this->validator ??= new RutChile();
+        $this->validator = $validator ?? new RutChile();
     }
 
-    public function validate(string $attribute, mixed $value, Closure $fail): void
+    protected function message(): string
     {
-        if (! is_string($value) || ! $this->validator->validate($value)) {
-            $fail('El RUT ingresado no es válido.');
-        }
+        return 'El RUT ingresado no es válido.';
     }
 }

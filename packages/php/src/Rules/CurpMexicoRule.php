@@ -2,21 +2,17 @@
 
 namespace Esponsor\DniValidator\Rules;
 
-use Closure;
 use Esponsor\DniValidator\CurpMexico;
-use Illuminate\Contracts\Validation\ValidationRule;
 
-class CurpMexicoRule implements ValidationRule
+class CurpMexicoRule extends DocumentRule
 {
-    public function __construct(private ?CurpMexico $validator = null)
+    public function __construct(?CurpMexico $validator = null)
     {
-        $this->validator ??= new CurpMexico();
+        $this->validator = $validator ?? new CurpMexico();
     }
 
-    public function validate(string $attribute, mixed $value, Closure $fail): void
+    protected function message(): string
     {
-        if (! is_string($value) || ! $this->validator->validate($value)) {
-            $fail('El CURP ingresado no es válido.');
-        }
+        return 'El CURP ingresado no es válido.';
     }
 }

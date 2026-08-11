@@ -17,6 +17,15 @@ describe('getValidator', () => {
     expect(validator?.validate('GICJ020605HDGRHNA2')).toBe(true);
   });
 
+  it('shares the SSN validator between the United States and Puerto Rico', () => {
+    expect(getValidator('US', 'SSN')).toBe(getValidator('PR', 'SSN'));
+  });
+
+  it('looks up country and type case insensitively', () => {
+    expect(getValidator('cl', 'rut')?.validate('11.111.111-1')).toBe(true);
+    expect(getValidator('ar', 'cuit/cuil')?.validate('20-12345678-6')).toBe(true);
+  });
+
   it('returns null for unknown document types', () => {
     expect(getValidator('CL', 'UNKNOWN')).toBeNull();
     expect(getValidator('XX', 'RUT')).toBeNull();

@@ -1,52 +1,67 @@
 <?php
 
-use Esponsor\DniValidator\CurpMexico;
-use Esponsor\DniValidator\RutChile;
+use Esponsor\DniValidator\DocumentValidatorRegistry;
 
-function loadVectors(string $filename): array
+/**
+ * @return array<int, array{country: string, type: string, valid: array<int, string>, invalid: array<int, string>, formats?: array<string, string>}>
+ */
+function loadVectors(): array
 {
-    $path = dirname(__DIR__, 3).'/tests/vectors/'.$filename;
-    $contents = file_get_contents($path);
+    $vectors = [];
 
-    return json_decode($contents, true, 512, JSON_THROW_ON_ERROR);
+    foreach (glob(dirname(__DIR__, 3).'/tests/vectors/*.json') ?: [] as $path) {
+        $vectors[] = json_decode((string) file_get_contents($path), true, 512, JSON_THROW_ON_ERROR);
+    }
+
+    return $vectors;
 }
 
-dataset('cl-rut-valid', function () {
-    $vectors = loadVectors('cl-rut.json');
+/**
+ * @return array<string, array{0: string, 1: string, 2: string}>
+ */
+function vectorCases(string $bucket): array
+{
+    $cases = [];
 
-    return array_map(fn (string $value) => [$value], $vectors['valid']);
-});
+    foreach (loadVectors() as $vector) {
+        foreach ($vector[$bucket] as $value) {
+            $cases["{$vector['country']} {$vector['type']} {$value}"] = [$vector['country'], $vector['type'], (string) $value];
+        }
+    }
 
-dataset('cl-rut-invalid', function () {
-    $vectors = loadVectors('cl-rut.json');
+    return $cases;
+}
 
-    return array_map(fn (string $value) => [$value], $vectors['invalid']);
-});
+/**
+ * @return array<string, array{0: string, 1: string, 2: string, 3: string}>
+ */
+function vectorFormatCases(): array
+{
+    $cases = [];
 
-dataset('mx-curp-valid', function () {
-    $vectors = loadVectors('mx-curp.json');
+    foreach (loadVectors() as $vector) {
+        foreach ($vector['formats'] ?? [] as $input => $expected) {
+            $cases["{$vector['country']} {$vector['type']} {$input}"] = [$vector['country'], $vector['type'], (string) $input, $expected];
+        }
+    }
 
-    return array_map(fn (string $value) => [$value], $vectors['valid']);
-});
+    return $cases;
+}
 
-dataset('mx-curp-invalid', function () {
-    $vectors = loadVectors('mx-curp.json');
+dataset('valid-documents', fn () => vectorCases('valid'));
 
-    return array_map(fn (string $value) => [$value], $vectors['invalid']);
-});
+dataset('invalid-documents', fn () => vectorCases('invalid'));
 
-it('accepts valid Chile RUT vectors', function (string $value) {
-    expect((new RutChile())->validate($value))->toBeTrue();
-})->with('cl-rut-valid');
+dataset('document-formats', fn () => vectorFormatCases());
 
-it('rejects invalid Chile RUT vectors', function (string $value) {
-    expect((new RutChile())->validate($value))->toBeFalse();
-})->with('cl-rut-invalid');
+it('accepts valid document vectors', function (string $country, string $type, string $value) {
+    expect(DocumentValidatorRegistry::validate($country, $type, $value))->toBeTrue();
+})->with('valid-documents');
 
-it('accepts valid Mexico CURP vectors', function (string $value) {
-    expect((new CurpMexico())->validate($value))->toBeTrue();
-})->with('mx-curp-valid');
+it('rejects invalid document vectors', function (string $country, string $type, string $value) {
+    expect(DocumentValidatorRegistry::validate($country, $type, $value))->toBeFalse();
+})->with('invalid-documents');
 
-it('rejects invalid Mexico CURP vectors', function (string $value) {
-    expect((new CurpMexico())->validate($value))->toBeFalse();
-})->with('mx-curp-invalid');
+it('formats document vectors', function (string $country, string $type, string $input, string $expected) {
+    expect(DocumentValidatorRegistry::for($country, $type)->format($input))->toBe($expected);
+})->with('document-formats');
