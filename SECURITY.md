@@ -11,7 +11,7 @@
 
 Please **do not** open a public GitHub issue for security problems.
 
-Email [victorpuentem@gmail.com](mailto:victorpuentem@gmail.com) with:
+Email [info@esponsor.com](mailto:info@esponsor.com) with:
 
 - A description of the issue and its impact
 - Steps to reproduce or a proof of concept
