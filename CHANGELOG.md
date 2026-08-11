@@ -1,4 +1,4 @@
-## [0.1.1] - Unreleased
+## [0.1.1] - 2026-08-11
 
 ### Security
 - **Chile RUT (JS/PHP):** reject oversized bodies and calculate the check digit from characters instead of converting the whole body to a number. The previous JS path could infinite-loop when `parseInt` produced `Infinity` on huge input (DoS if untrusted request data was validated server-side).
