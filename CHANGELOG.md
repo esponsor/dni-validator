@@ -1,4 +1,4 @@
-## [0.1.0] - Unreleased
+## [0.1.0] - 2026-08-11
 
 Added validators for Argentina (CUIT/CUIL), Brazil (CPF, CNPJ), Canada (SIN), Colombia (CC, NIT, PASS), Ecuador (CI, RUT, PASS), Peru (DNI, RUC), Spain (DNI/NIE), the United States and Puerto Rico (SSN) and Uruguay (CI, RUT), in PHP and TypeScript.
 Added a Laravel validation rule per document and registered every document in both registries; country and type lookups are now case insensitive.
