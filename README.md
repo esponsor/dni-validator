@@ -1,5 +1,10 @@
 # dni-validator
 
+[![CI](https://github.com/esponsor/dni-validator/actions/workflows/ci.yml/badge.svg)](https://github.com/esponsor/dni-validator/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/@esponsor/dni-validator)](https://www.npmjs.com/package/@esponsor/dni-validator)
+[![Packagist](https://img.shields.io/packagist/v/esponsor/dni-validator)](https://packagist.org/packages/esponsor/dni-validator)
+[![License](https://img.shields.io/github/license/esponsor/dni-validator)](LICENSE)
+
 Validators for Latin American and related national ID documents.
 Available as both a **PHP/Laravel** package and a **JavaScript/TypeScript** package.
 Both packages implement the same rules and are covered by the same shared test vectors.
@@ -40,7 +45,7 @@ a well-formed value can still be a number that was never issued.
 composer require esponsor/dni-validator
 ```
 
-Requires PHP `^8.2` and `illuminate/contracts` `^10|^11|^12`.
+Requires PHP `^8.4` and `illuminate/contracts` `^10|^11|^12`.
 
 ### Direct usage
 
@@ -97,9 +102,8 @@ DocumentValidatorRegistry::for('CL', 'UNKNOWN'); // null
 ### Running PHP tests
 
 ```bash
-cd packages/php
 composer install
-./vendor/bin/pest
+vendor/bin/pest
 ```
 
 ---
@@ -112,7 +116,7 @@ composer install
 npm install @esponsor/dni-validator
 ```
 
-Requires Node 20+.
+Requires Node 22+. The published npm package is the **repo root** `package.json`; `packages/js` holds sources and tests only.
 
 ### Named imports
 
@@ -146,12 +150,15 @@ getValidator('CL', 'UNKNOWN'); // null
 ### Running JS tests
 
 ```bash
-cd packages/js
-npm install
+npm --prefix packages/js install
 npm test
 ```
 
 ---
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md). Security reports: [SECURITY.md](SECURITY.md).
 
 ## Shared test vectors
 

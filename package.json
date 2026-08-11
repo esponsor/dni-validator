@@ -4,13 +4,15 @@
   "description": "Validators for Latin American and related national ID documents",
   "repository": {
     "type": "git",
-    "url": "https://github.com/esponsor/dni-validator.git",
-    "directory": "packages/js"
+    "url": "https://github.com/esponsor/dni-validator.git"
   },
   "homepage": "https://github.com/esponsor/dni-validator#readme",
   "bugs": "https://github.com/esponsor/dni-validator/issues",
   "type": "module",
   "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
   "main": "./packages/js/dist/index.js",
   "types": "./packages/js/dist/index.d.ts",
   "exports": {
@@ -64,14 +66,15 @@
     }
   },
   "files": [
-    "packages/js/dist",
-    "packages/js/src",
-    "packages/js/tsconfig.json",
-    "packages/js/package.json"
+    "LICENSE",
+    "README.md",
+    "packages/js/dist"
   ],
   "scripts": {
     "prepare": "npm --prefix packages/js install --include=dev && npm --prefix packages/js run build",
+    "prepublishOnly": "npm run build",
     "test": "npm --prefix packages/js test",
+    "test:php": "vendor/bin/pest",
     "build": "npm --prefix packages/js run build"
   }
 }
