@@ -30,3 +30,21 @@ describe('rutValidate vectors', () => {
     expect(rutValidate(value)).toBe(false);
   });
 });
+
+describe('rutValidate adversarial input', () => {
+  it.each([100, 1_000, 100_000])('rejects %s-digit bodies without hanging', (size) => {
+    const started = Date.now();
+    expect(rutValidate(`${'9'.repeat(size)}-1`)).toBe(false);
+    expect(Date.now() - started).toBeLessThan(1_000);
+  });
+
+  it('rejects Infinity-prone oversized digit strings quickly', () => {
+    const started = Date.now();
+    expect(rutValidate('9'.repeat(310))).toBe(false);
+    expect(Date.now() - started).toBeLessThan(1_000);
+  });
+
+  it('rejects valid RUT wrapped in arbitrary characters', () => {
+    expect(rutValidate('<script>11.111.111-1</script>')).toBe(false);
+  });
+});
