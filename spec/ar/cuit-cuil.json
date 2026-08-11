@@ -1,0 +1,19 @@
+{
+  "country": "AR",
+  "type": "CUIT/CUIL",
+  "name": "Código Único de Identificación Tributaria / Código Único de Identificación Laboral",
+  "subject": "either",
+  "validation": "checksum",
+  "patterns": ["###########", "##-########-#"],
+  "valid": ["30-69345023-9", "20-12345678-6", "23222222222"],
+  "invalid": [
+    { "value": "20-12345678-5", "reason": "checksum" },
+    { "value": "21-12345678-6", "reason": "component" },
+    { "value": "2012345678", "reason": "length" },
+    { "value": "not-a-cuit", "reason": "format" }
+  ],
+  "format_cases": {
+    "20123456786": "20-12345678-6",
+    "20 12345678 6": "20-12345678-6"
+  }
+}

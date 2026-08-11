@@ -160,11 +160,12 @@ npm test
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). Security reports: [SECURITY.md](SECURITY.md).
 
-## Shared test vectors
+## Shared specs
 
-`tests/vectors/*.json` holds one file per document with its `country`, `type`, `valid`,
-`invalid` and optional `formats` cases. Both test suites read these files and drive the
-validators through the registry, so the two runtimes cannot drift apart.
+[`spec/<cc>/<type>.json`](spec/) is the language-independent contract for each document
+(`valid`, `invalid` with reasons, optional `format_cases`, and metadata). Both the PHP and
+JS test suites load these files through the registry, so the two runtimes cannot drift apart.
+See [spec/README.md](spec/README.md) for the schema.
 
 ## Behaviour notes
 

@@ -1,0 +1,14 @@
+{
+  "country": "EC",
+  "type": "RUT",
+  "name": "Registro Único de Contribuyentes",
+  "subject": "either",
+  "validation": "structural",
+  "patterns": ["#############", "##########-###"],
+  "valid": ["1710034065001", "1710034065-001"],
+  "invalid": [
+    { "value": "171003406500", "reason": "length" },
+    { "value": "17100340650011", "reason": "length" },
+    { "value": "not-a-rut", "reason": "format" }
+  ]
+}

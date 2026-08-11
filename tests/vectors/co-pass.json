@@ -1,6 +1,0 @@
-{
-    "country": "CO",
-    "type": "PASS",
-    "valid": ["AB123456", "PA1234567890", "A1"],
-    "invalid": ["A", "PA12345678901"]
-}

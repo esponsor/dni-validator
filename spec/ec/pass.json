@@ -1,0 +1,13 @@
+{
+  "country": "EC",
+  "type": "PASS",
+  "name": "Passport",
+  "subject": "person",
+  "validation": "length",
+  "patterns": ["############"],
+  "valid": ["AB123456", "A12345678901"],
+  "invalid": [
+    { "value": "AB12345", "reason": "length" },
+    { "value": "A123456789012", "reason": "length" }
+  ]
+}

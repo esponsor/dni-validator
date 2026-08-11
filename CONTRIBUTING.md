@@ -6,9 +6,9 @@ Thanks for helping improve `dni-validator`.
 
 | Path | Role |
 |------|------|
+| `spec/` | Language-independent document specs (source of truth for both runtimes) |
 | `packages/php/src` | PHP validators and Laravel rules (Packagist package root is the repo root `composer.json`) |
 | `packages/js/src` | TypeScript sources (private workspace; **publish npm from the repo root**) |
-| `tests/vectors` | Shared JSON fixtures used by both runtimes |
 
 ## Setup
 
@@ -27,17 +27,17 @@ Requires PHP `^8.4`, Composer 2, and Node 22+.
 
 ## Adding a document
 
-1. Implement the validator in PHP and TypeScript with matching `validate` / `clean` / `format` behaviour where applicable.
-2. Register it in `DocumentValidatorRegistry` and the JS `registry`.
-3. Add a Laravel rule extending `DocumentRule`.
-4. Add `tests/vectors/<cc>-<type>.json` with `valid`, `invalid`, and optional `formats`.
+1. Add `spec/<cc>/<type-slug>.json` following [spec/README.md](spec/README.md).
+2. Implement the validator in PHP and TypeScript with matching `validate` / `clean` / `format` behaviour where applicable.
+3. Register it in `DocumentValidatorRegistry` and the JS `registry`.
+4. Add a Laravel rule extending `DocumentRule`.
 5. Update the supported-documents table in `README.md` and `CHANGELOG.md`.
 
-If a document has no public checksum, mark it **Structural only** or **Length only** in the README and in the validator docblock.
+If a document has no public checksum, set `"validation": "structural"` or `"length"` in the spec and mark it **Structural only** or **Length only** in the README and validator docblock.
 
 ## Pull requests
 
-- Keep PHP and JS behaviour in lockstep via the shared vectors.
+- Keep PHP and JS behaviour in lockstep via the shared specs.
 - CI runs Pest and Vitest on every PR; both must stay green.
 - Do not commit `vendor/`, `node_modules/`, or `packages/js/dist/`.
 

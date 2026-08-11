@@ -1,0 +1,19 @@
+{
+  "country": "PE",
+  "type": "DNI",
+  "name": "Documento Nacional de Identidad",
+  "subject": "person",
+  "validation": "structural",
+  "patterns": ["########", "########-?"],
+  "valid": ["12345678", "12345678-K", "123456789"],
+  "invalid": [
+    { "value": "1234567", "reason": "length" },
+    { "value": "1234567890", "reason": "length" },
+    { "value": "ABCDEFGH", "reason": "format" },
+    { "value": "not-a-dni", "reason": "format" }
+  ],
+  "format_cases": {
+    "12345678K": "12345678-K",
+    "12345678": "12345678"
+  }
+}

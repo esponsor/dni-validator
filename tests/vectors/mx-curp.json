@@ -1,9 +1,0 @@
-{
-    "country": "MX",
-    "type": "CURP",
-    "valid": ["GICJ020605HDGRHNA2", "BOOL051031MDFRRNA8"],
-    "invalid": ["BUFA051003MSPNGMA", "BUFA051003MSPNGMA3"],
-    "formats": {
-        "gicj020605hdgrhna2": "GICJ020605HDGRHNA2"
-    }
-}

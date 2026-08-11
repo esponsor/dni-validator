@@ -1,0 +1,17 @@
+{
+  "country": "UY",
+  "type": "RUT",
+  "name": "Registro Único Tributario",
+  "subject": "organization",
+  "validation": "checksum",
+  "patterns": ["############", "##-######-###-#"],
+  "valid": ["211003360014", "21-100336-001-4", "212223420014"],
+  "invalid": [
+    { "value": "211003360015", "reason": "checksum" },
+    { "value": "21100336001", "reason": "length" },
+    { "value": "not-a-rut", "reason": "format" }
+  ],
+  "format_cases": {
+    "211003360014": "21-100336-001-4"
+  }
+}

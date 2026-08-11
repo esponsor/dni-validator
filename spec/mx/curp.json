@@ -1,0 +1,16 @@
+{
+  "country": "MX",
+  "type": "CURP",
+  "name": "Clave Única de Registro de Población",
+  "subject": "person",
+  "validation": "checksum",
+  "patterns": ["##################"],
+  "valid": ["GICJ020605HDGRHNA2", "BOOL051031MDFRRNA8"],
+  "invalid": [
+    { "value": "BUFA051003MSPNGMA", "reason": "length" },
+    { "value": "BUFA051003MSPNGMA3", "reason": "checksum" }
+  ],
+  "format_cases": {
+    "gicj020605hdgrhna2": "GICJ020605HDGRHNA2"
+  }
+}

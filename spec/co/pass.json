@@ -1,0 +1,13 @@
+{
+  "country": "CO",
+  "type": "PASS",
+  "name": "Passport",
+  "subject": "person",
+  "validation": "length",
+  "patterns": ["############"],
+  "valid": ["AB123456", "PA1234567890", "A1"],
+  "invalid": [
+    { "value": "A", "reason": "length" },
+    { "value": "PA12345678901", "reason": "length" }
+  ]
+}
