@@ -9,7 +9,7 @@ Existing Chile RUT and Mexico CURP APIs are unchanged.
 
 Tooling / OSS readiness:
 - Bumped Pest to `^3.0` and committed `composer.lock` so PHP installs resolve again.
-- Added GitHub Actions CI for PHP 8.4–8.5 and Node 20/22.
+- Added GitHub Actions CI for PHP 8.4–8.5 and Node 22.
 - Clarified that npm publishes from the repo root (`packages/js` is private).
 - Added `CONTRIBUTING.md` and `SECURITY.md`.
 - Bumped Vitest to v3 (npm audit clean for the JS workspace).

@@ -116,7 +116,7 @@ vendor/bin/pest
 npm install @esponsor/dni-validator
 ```
 
-Requires Node 20+. The published npm package is the **repo root** `package.json`; `packages/js` holds sources and tests only.
+Requires Node 22+. The published npm package is the **repo root** `package.json`; `packages/js` holds sources and tests only.
 
 ### Named imports
 

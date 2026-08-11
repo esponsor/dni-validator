@@ -11,7 +11,7 @@
   "type": "module",
   "license": "MIT",
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "main": "./packages/js/dist/index.js",
   "types": "./packages/js/dist/index.d.ts",
