@@ -43,5 +43,6 @@ If a document has no public checksum, mark it **Structural only** or **Length on
 
 ## Publishing (maintainers)
 
-- **Packagist**: tag a release; Packagist uses the root `composer.json`.
-- **npm**: from the repo root, `npm run build` then `npm publish` (the root package is `@esponsor/dni-validator`; `packages/js` is private and must not be published).
+- **Packagist**: create a git tag / GitHub Release; Packagist reads the root `composer.json`.
+- **npm**: prefer GitHub Release → `.github/workflows/release-npm.yml` with [Trusted Publishing](https://docs.npmjs.com/trusted-publishers) configured for this repo/workflow (no long-lived `NPM_TOKEN`). Manual fallback from the repo root: `npm --prefix packages/js ci && npm run build && npm publish --access public`.
+- Do not publish `packages/js` (it is private).

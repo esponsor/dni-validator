@@ -1,3 +1,15 @@
+## [0.1.1] - Unreleased
+
+### Security
+- **Chile RUT (JS/PHP):** reject oversized bodies and calculate the check digit from characters instead of converting the whole body to a number. The previous JS path could infinite-loop when `parseInt` produced `Infinity` on huge input (DoS if untrusted request data was validated server-side).
+- **Chile RUT `validate()`:** only accept digits and conventional separators (dots, hyphens, spaces, `K`). `clean()` still strips other characters for formatting helpers; wrapping markup such as `<script>…</script>` no longer validates.
+
+### Tooling
+- Removed the root `prepare` hook that ran a nested `npm install` during publish/git installs.
+- Added `release-npm.yml` for GitHub Release → npm publish with OIDC/`--provenance` (configure Trusted Publishing on npm).
+- Pinned GitHub Actions to full commit SHAs.
+- Expanded `.gitignore` for env/auth/editor junk; marked 0.0.x unsupported in `SECURITY.md`.
+
 ## [0.1.0] - 2026-08-11
 
 Added validators for Argentina (CUIT/CUIL), Brazil (CPF, CNPJ), Canada (SIN), Colombia (CC, NIT, PASS), Ecuador (CI, RUT, PASS), Peru (DNI, RUC), Spain (DNI/NIE), the United States and Puerto Rico (SSN) and Uruguay (CI, RUT), in PHP and TypeScript.

@@ -171,6 +171,9 @@ validators through the registry, so the two runtimes cannot drift apart.
 These validators were ported from the eSponsor front-end helper. The following differences are
 deliberate fixes:
 
+- **CL RUT** `validate()` accepts only digits and conventional separators (`.`, `-`, spaces, `K`).
+  The body is limited to 1–8 digits and the check digit is computed digit-by-digit (no whole-body
+  integer conversion). `clean()` may still strip other characters when formatting.
 - **BR CPF** rejects repeated-digit values such as `111.111.111-11`, which pass the checksum but
   are not issued. `CNPJ` already rejected them.
 - **UY CI** requires 7 or 8 digits before checking the digit. Without the length guard a

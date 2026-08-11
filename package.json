@@ -1,10 +1,10 @@
 {
   "name": "@esponsor/dni-validator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Validators for Latin American and related national ID documents",
   "repository": {
     "type": "git",
-    "url": "https://github.com/esponsor/dni-validator.git"
+    "url": "git+https://github.com/esponsor/dni-validator.git"
   },
   "homepage": "https://github.com/esponsor/dni-validator#readme",
   "bugs": "https://github.com/esponsor/dni-validator/issues",
@@ -71,7 +71,6 @@
     "packages/js/dist"
   ],
   "scripts": {
-    "prepare": "npm --prefix packages/js install --include=dev && npm --prefix packages/js run build",
     "prepublishOnly": "npm run build",
     "test": "npm --prefix packages/js test",
     "test:php": "vendor/bin/pest",
