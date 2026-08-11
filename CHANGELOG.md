@@ -1,3 +1,8 @@
+## [Unreleased]
+
+### Tooling
+- Harden `release-npm.yml`: Node 24, npm 11.19.0 (Trusted Publishing), no dependency cache on publish, assert git tag matches `package.json` version.
+
 ## [0.1.1] - 2026-08-11
 
 ### Security
