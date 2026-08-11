@@ -1,0 +1,18 @@
+{
+  "country": "ES",
+  "type": "DNI",
+  "name": "Documento Nacional de Identidad / Número de Identificación de Extranjero",
+  "subject": "person",
+  "validation": "checksum",
+  "patterns": ["########?", "X#######?"],
+  "valid": ["12345678Z", "12345678-z", "X1234567L", "Y1234567X", "Z1234567R"],
+  "invalid": [
+    { "value": "12345678A", "reason": "checksum" },
+    { "value": "X1234567M", "reason": "checksum" },
+    { "value": "1234Z", "reason": "length" },
+    { "value": "not-a-dni", "reason": "format" }
+  ],
+  "format_cases": {
+    "12345678-z": "12345678Z"
+  }
+}

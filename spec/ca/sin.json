@@ -1,0 +1,17 @@
+{
+  "country": "CA",
+  "type": "SIN",
+  "name": "Social Insurance Number",
+  "subject": "person",
+  "validation": "checksum",
+  "patterns": ["#########", "###-###-###"],
+  "valid": ["046-454-286", "130692544", "123456782"],
+  "invalid": [
+    { "value": "046-454-287", "reason": "checksum" },
+    { "value": "04645428", "reason": "length" },
+    { "value": "not-a-sin", "reason": "format" }
+  ],
+  "format_cases": {
+    "046454286": "046-454-286"
+  }
+}

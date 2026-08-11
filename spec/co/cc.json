@@ -1,0 +1,18 @@
+{
+  "country": "CO",
+  "type": "CC",
+  "name": "Cédula de Ciudadanía",
+  "subject": "person",
+  "validation": "structural",
+  "patterns": ["##########", "#.###.###.###"],
+  "valid": ["1.020.304.050", "1020304050", "10203040"],
+  "invalid": [
+    { "value": "123456789", "reason": "length" },
+    { "value": "1234567", "reason": "length" },
+    { "value": "not-a-cc", "reason": "format" }
+  ],
+  "format_cases": {
+    "1020304050": "1.020.304.050",
+    "10203040": "10203040"
+  }
+}

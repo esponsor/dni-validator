@@ -4,8 +4,8 @@ import { describe, expect, it } from 'vitest';
 import { curpCheckDigit, curpClean, curpFormat, curpValidate } from '../src/mexico/curp.js';
 
 const vectors = JSON.parse(
-  readFileSync(resolve(__dirname, '../../../tests/vectors/mx-curp.json'), 'utf-8'),
-) as { valid: string[]; invalid: string[] };
+  readFileSync(resolve(__dirname, '../../../spec/mx/curp.json'), 'utf-8'),
+) as { valid: string[]; invalid: Array<{ value: string }> };
 
 describe('curpClean', () => {
   it('uppercases and strips non-alphanumeric characters', () => {
@@ -32,7 +32,7 @@ describe('curpValidate vectors', () => {
     expect(curpValidate(value)).toBe(true);
   });
 
-  it.each(vectors.invalid)('rejects invalid CURP %s', (value) => {
+  it.each(vectors.invalid.map((entry) => entry.value))('rejects invalid CURP %s', (value) => {
     expect(curpValidate(value)).toBe(false);
   });
 });

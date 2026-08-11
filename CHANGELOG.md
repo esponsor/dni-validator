@@ -1,7 +1,7 @@
 ## [Unreleased]
 
-### Tooling
-- Harden `release-npm.yml`: Node 24, npm 11.19.0 (Trusted Publishing), no dependency cache on publish, assert git tag matches `package.json` version.
+### Changed
+- Moved shared document fixtures from `tests/vectors/` to `spec/<cc>/<type>.json` with richer metadata (`name`, `subject`, `validation`, typed `invalid` reasons, `format_cases`). PHP and JS tests load and schema-validate these specs.
 
 ## [0.1.1] - 2026-08-11
 

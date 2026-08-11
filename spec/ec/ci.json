@@ -1,0 +1,17 @@
+{
+  "country": "EC",
+  "type": "CI",
+  "name": "Cédula de Identidad",
+  "subject": "person",
+  "validation": "structural",
+  "patterns": ["##########", "#########-#"],
+  "valid": ["1710034065", "171003406-5"],
+  "invalid": [
+    { "value": "171003406", "reason": "length" },
+    { "value": "17100340655", "reason": "length" },
+    { "value": "not-a-ci", "reason": "format" }
+  ],
+  "format_cases": {
+    "1710034065": "171003406-5"
+  }
+}

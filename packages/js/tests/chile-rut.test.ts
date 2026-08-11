@@ -4,8 +4,8 @@ import { describe, expect, it } from 'vitest';
 import { rutClean, rutFormat, rutValidate } from '../src/chile/rut.js';
 
 const vectors = JSON.parse(
-  readFileSync(resolve(__dirname, '../../../tests/vectors/cl-rut.json'), 'utf-8'),
-) as { valid: string[]; invalid: string[] };
+  readFileSync(resolve(__dirname, '../../../spec/cl/rut.json'), 'utf-8'),
+) as { valid: string[]; invalid: Array<{ value: string }> };
 
 describe('rutClean', () => {
   it('strips formatting and uppercases', () => {
@@ -26,7 +26,7 @@ describe('rutValidate vectors', () => {
     expect(rutValidate(value)).toBe(true);
   });
 
-  it.each(vectors.invalid)('rejects invalid RUT %s', (value) => {
+  it.each(vectors.invalid.map((entry) => entry.value))('rejects invalid RUT %s', (value) => {
     expect(rutValidate(value)).toBe(false);
   });
 });

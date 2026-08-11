@@ -1,0 +1,17 @@
+{
+  "country": "PE",
+  "type": "RUC",
+  "name": "Registro Único de Contribuyentes",
+  "subject": "either",
+  "validation": "structural",
+  "patterns": ["###########"],
+  "valid": ["20123456789", "10123456789", "15123456789"],
+  "invalid": [
+    { "value": "30123456789", "reason": "component" },
+    { "value": "2012345678", "reason": "length" },
+    { "value": "not-a-ruc", "reason": "format" }
+  ],
+  "format_cases": {
+    "20-123456789": "20123456789"
+  }
+}

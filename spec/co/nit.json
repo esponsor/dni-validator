@@ -1,0 +1,17 @@
+{
+  "country": "CO",
+  "type": "NIT",
+  "name": "Número de Identificación Tributaria",
+  "subject": "either",
+  "validation": "structural",
+  "patterns": ["##########", "###.###.###-#"],
+  "valid": ["900.123.456-1", "9001234561"],
+  "invalid": [
+    { "value": "900123456", "reason": "length" },
+    { "value": "90012345612", "reason": "length" },
+    { "value": "not-a-nit", "reason": "format" }
+  ],
+  "format_cases": {
+    "9001234561": "900.123.456-1"
+  }
+}

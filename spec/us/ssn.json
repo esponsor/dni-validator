@@ -1,0 +1,21 @@
+{
+  "country": "US",
+  "type": "SSN",
+  "name": "Social Security Number",
+  "subject": "person",
+  "validation": "structural",
+  "patterns": ["#########", "###-##-####"],
+  "valid": ["219-09-9999", "078-05-1120", "123456789"],
+  "invalid": [
+    { "value": "666-12-1234", "reason": "component" },
+    { "value": "000-12-1234", "reason": "component" },
+    { "value": "900-12-1234", "reason": "component" },
+    { "value": "123-00-1234", "reason": "component" },
+    { "value": "123-45-0000", "reason": "component" },
+    { "value": "12345678", "reason": "length" },
+    { "value": "not-a-ssn", "reason": "format" }
+  ],
+  "format_cases": {
+    "219099999": "219-09-9999"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "country": "CL",
+  "type": "RUT",
+  "name": "Rol Único Tributario",
+  "subject": "either",
+  "validation": "checksum",
+  "patterns": ["########-#", "##.###.###-#"],
+  "valid": ["11.111.111-1", "9.083.469-K"],
+  "invalid": [
+    { "value": "12.345.678-9", "reason": "checksum" },
+    { "value": "11.111.111-2", "reason": "checksum" },
+    { "value": "not-a-rut", "reason": "format" },
+    { "value": "<script>11.111.111-1</script>", "reason": "format" },
+    { "value": "999999999-1", "reason": "length" }
+  ],
+  "format_cases": {
+    "111111111": "11.111.111-1",
+    "9083469k": "9.083.469-K"
+  }
+}
