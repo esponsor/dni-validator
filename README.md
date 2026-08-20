@@ -45,7 +45,7 @@ a well-formed value can still be a number that was never issued.
 composer require esponsor/dni-validator
 ```
 
-Requires PHP `^8.4` and `illuminate/contracts` `^10|^11|^12`.
+Requires PHP `^8.4` and `illuminate/contracts` `^10|^11|^12|^13`.
 
 ### Direct usage
 

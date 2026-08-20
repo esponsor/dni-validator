@@ -3,6 +3,11 @@
 ### Changed
 - Moved shared document fixtures from `tests/vectors/` to `spec/<cc>/<type>.json` with richer metadata (`name`, `subject`, `validation`, typed `invalid` reasons, `format_cases`). PHP and JS tests load and schema-validate these specs.
 
+## [0.1.2] - 2026-08-20
+
+### Changed
+- Allow `illuminate/contracts` `^13` (Laravel 13).
+
 ## [0.1.1] - 2026-08-11
 
 ### Security
