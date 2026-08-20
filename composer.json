@@ -7,7 +7,7 @@
     "authors": [{ "name": "eSponsor", "email": "info@esponsor.com" }],
     "require": {
         "php": "^8.4",
-        "illuminate/contracts": "^10|^11|^12"
+        "illuminate/contracts": "^10|^11|^12|^13"
     },
     "require-dev": {
         "pestphp/pest": "^3.0"
