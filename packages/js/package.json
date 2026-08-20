@@ -1,7 +1,7 @@
 {
   "name": "@esponsor/dni-validator-js",
   "private": true,
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Internal TypeScript sources and tests for @esponsor/dni-validator (publish from the repo root)",
   "type": "module",
   "license": "MIT",
